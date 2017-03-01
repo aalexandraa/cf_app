@@ -1,0 +1,3 @@
+# README
+
+Hey I am Alexandra and learning to program with CareerFoundry. This is my first Rails app.
