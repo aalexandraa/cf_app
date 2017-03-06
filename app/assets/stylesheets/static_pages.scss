@@ -1,3 +1,48 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  padding-top: 40px;
+  margin-left: 10px;
+}
+
+h1 {
+  font-family: 'Dawning of a New Day', cursive;
+}
+
+h2 {
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 1em;
+}
+
+p {
+  font-family: Arial;
+  font-size: 1em;
+}
+
+nav {
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  margin-left: -10px;
+}
+
+ul li {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  padding: 10px 10px 0 0;
+  text-decoration: none;
+  font-family: 'Hind', sans-serif;
+  color: white;
+}
+
+.site-footer {
+  height: 25px;
+  color: white;
+  background: black;
+  padding-left: 10px;
+  margin-left: -10px;
+}
