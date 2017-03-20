@@ -3,21 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
   padding-top: 40px;
-  margin-left: 10px;
+  font-family: 'Lato', sans-serif;
 }
 
 h1 {
-  font-family: 'Dawning of a New Day', cursive;
+  font-size: 4em;
+  text-align: center;
 }
 
 h2 {
-  font-family: Arial;
-  font-weight: normal;
-  font-size: 1em;
+  font-size: 2em;
+  text-align: center;
 }
 
 p {
-  font-family: Arial;
   font-size: 1em;
 }
 
@@ -39,10 +38,21 @@ ul li {
   color: white;
 }
 
+.img-responsive {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .site-footer {
   height: 25px;
   color: white;
   background: black;
   padding-left: 10px;
   margin-left: -10px;
+}
+
+.footer-text {
+  text-align: right;
+  margin-right: 15px;
 }
