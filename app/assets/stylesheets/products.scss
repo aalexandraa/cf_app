@@ -1,11 +1,20 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-th {
-  width: 600px;
-  text-align: center;
+
+img {
+  max-width: 100%;
+  margin-bottom: 10px;
 }
 
-table {
-  margin: 15px;
+.row p {
+  font-size: 1.5em;
+}
+
+.product-links p {
+  font-size: 1em;
+}
+
+.new-product {
+  margin-left: 15px;
 }

@@ -1,13 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
+<h1>Our Products</h1>
+<h2>We are so proud to present to you the best bikes you will have ever owned!</h2>
 
+<br>
+
+<div class="container-fluid">
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <%= image_tag(product.image_url, class: "image.responsive") %>
+        <p><%= product.name %></p>
+        <p><strong>EUR <%= product.price %></strong></p>
+        <div class="product-links">
+          <p><%= link_to 'Show', product %> <%= link_to 'Edit', edit_product_path(product) %> <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </div><!-- end product-links -->
+      </div><!-- end col -->
+    <% end %>
+  </div><!-- end row -->
+</div><!-- end container -->
+
+<br>
+<div class="new-product">
+  <%= link_to 'New Product', new_product_path %>
+</div>
+
+<!--
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
       <th>Image url</th>
+      <th>Colour</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +43,7 @@
         <td><%= product.name %></td>
         <td><%= product.description %></td>
         <td><%= product.image_url %></td>
+        <td><%= product.colour %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
