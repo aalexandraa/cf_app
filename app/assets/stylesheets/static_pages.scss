@@ -5,16 +5,15 @@ body {
   padding-top: 40px;
   font-family: 'Lato', sans-serif;
   margin: 0 15px;
+  text-align: center;
 }
 
 h1 {
   font-size: 4em;
-  text-align: center;
 }
 
 h2 {
   font-size: 2em;
-  text-align: center;
 }
 
 p {
@@ -26,7 +25,7 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
-  margin-left: -15px;
+  text-align: left;
 }
 
 ul li {
@@ -49,11 +48,10 @@ ul li {
   height: 25px;
   color: white;
   background: black;
-  padding-left: 10px;
-  margin-left: -10px;
+  text-align: center;
+  margin-top: 15px;
 }
 
 .footer-text {
-  text-align: right;
-  margin-right: 15px;
+  padding-top: 3px;
 }
