@@ -1,19 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Our Products</h1>
-<h2>We are so proud to present to you the best bikes you will have ever owned!</h2>
+<div class="product-index">
+  <h1>Our Products</h1>
+  <h2>We are so proud to present to you the best bikes you will have ever owned!</h2>
 
-<br>
+  <br>
 
-<div class="container-fluid">
-  <%= render @products %>
-</div><!-- end container -->
+  <div class="container-fluid" id="product-outline">
+    <%= render @products %>
+  </div><!-- end container -->
 
-<br>
-<div class="new-product-button">
-  <%= link_to 'New Product', new_product_path %>
+  <br>
+  <div class="new-product-button">
+    <%= link_to 'New Product', new_product_path %>
+  </div>
 </div>
-
 <!--
 <table>
   <thead>
@@ -44,3 +45,4 @@
 <br>
 
 <%= link_to 'New Product', new_product_path %>
+-->

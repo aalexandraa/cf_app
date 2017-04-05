@@ -7,6 +7,10 @@ img {
   margin-bottom: 10px;
 }
 
+#product-outline a {
+  color: black;
+}
+
 .row p {
   font-size: 1.5em;
 }
@@ -28,4 +32,8 @@ img {
 
 .show_product img{
   max-width: 70%;
+}
+
+form {
+  text-align: left;
 }

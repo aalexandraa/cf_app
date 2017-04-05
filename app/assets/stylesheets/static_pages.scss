@@ -52,14 +52,24 @@ nav {
   width: 100%;
   top: 0;
   text-align: left;
+  z-index: 1;
 }
 
 nav a {
   color: white;
 }
 
-nav li > a:focus, a:hover {
+.navbar-left {
+  margin-top: 4px;
+}
+
+#navbar-right {
+  margin-right: 15px;
+}
+
+#navbar a:hover {
     color: #778899;
+    text-decoration: none;
 }
 
 ul li {
