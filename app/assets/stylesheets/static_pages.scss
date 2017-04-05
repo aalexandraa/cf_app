@@ -38,6 +38,14 @@ p {
   font-size: 1em;
 }
 
+.img-responsive {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//nav-bar
+
 nav {
   background-color: black;
   position: fixed;
@@ -52,7 +60,7 @@ nav a {
 
 nav li > a:focus, a:hover {
     color: #778899;
-  }
+}
 
 ul li {
   display: inline-block;
@@ -64,13 +72,9 @@ ul li {
   color: white;
 }
 
-.img-responsive {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-}
+//contact-page
 
-.container-fluid h1 {
+.container h1 {
   text-align: center;
 }
 
@@ -78,13 +82,17 @@ ul li {
   font-size: 1em;
 }
 
-#contact-details {
-  text-align: center;
+.contact-form {
+  text-align: left;
 }
+
+//about-page
 
 #about {
   margin: 0 30px;
 }
+
+//footer
 
 .site-footer {
   height: 25px;
