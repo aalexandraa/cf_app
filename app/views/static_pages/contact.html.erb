@@ -4,7 +4,7 @@
       <h1>Contact Info</h1>
     </div>
     <div class="row">
-      <div class="col-md-6 col-xs-12" id="contact-details">
+      <div class="col-md-4 col-xs-12" id="contact-details">
         <div class="phone">
           <h2><span class="glyphicon glyphicon-glyphicon glyphicon-phone-alt"></span><br>call us:</h2>
             <p>(0049) 30 90 20 700</p>
@@ -21,7 +21,7 @@
       <%= flash[:notice] %>
 
       <%= form_tag("/static_pages/thank_you") do %>
-      <div class="col-md-6 col-xs-12">
+      <div class="col-md-8 col-xs-12" id="contact-form">
         <div class="form-group">
           <%= label_tag :name %>
           <%= text_field_tag :name, nil, class: "form-control", placeholder: "Enter Name" %>
