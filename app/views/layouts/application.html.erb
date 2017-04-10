@@ -25,7 +25,7 @@
       <ul class="navbar-collapse collapse navbar-right" id="navbar-right">
         <li><%= form_tag("/products", method: "get", class:"form-inline") do %>
           <%= label_tag(:q, "Search for:", class: "sr-only") %>
-          <%= text_field_tag(:q, "", class: "form-control") %>
+          <%= text_field_tag(:q, "", class: "form-control", placeholder: "Search") %>
           <%= submit_tag("Search", class: "btn btn-default") %>
           <% end %>
         </li>
