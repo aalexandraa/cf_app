@@ -18,23 +18,23 @@
           <p>contact@bikeberlin.com</p>
         </div><!--end e-mail-->
       </div>
-      <%= flash[:notice] %>
 
-      <%= form_tag("/static_pages/thank_you") do %>
+      <%= flash[:notice] %>
       <div class="col-md-8 col-xs-12" id="contact-form">
+        <%= form_tag("/static_pages/thank_you") do %>
         <div class="form-group">
           <%= label_tag :name %>
-          <%= text_field_tag :name, nil, class: "form-control", placeholder: "Enter Name" %>
+          <%= text_field_tag :name, nil, class: "form-control", placeholder: "Enter Name", required: "required" %>
         </div>
         <div class="form-group">
           <%= label_tag :email, "E-mail Address" %>
-          <%= text_field_tag :email, nil, class: "form-control", placeholder: "Enter Email" %>
+          <%= text_field_tag :email, nil, class: "form-control", placeholder: "Enter Email", required: "required" %>
         </div>
         <div class="form-group">
           <%= label_tag :message %>
-          <%= text_area_tag :message, nil, class: "form-control", placeholder: "Enter Message" %>
+          <%= text_area_tag :message, nil, class: "form-control", placeholder: "Enter Message", required: "required" %>
         </div>
-        <%= submit_tag "Send" %>
+        <%= submit_tag "Send", class: "btn btn-default" %>
         <% end %>
       </div>
     </div>

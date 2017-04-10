@@ -16,21 +16,34 @@
 
   <body>
     <nav id="navbar">
-      <ul class="navbar-left">
+      <ul class="navbar-collapse collapse navbar-left navbar-fixed-top">
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Products", products_path %></li>
         <li><%= link_to "About", static_pages_about_path %></li>
         <li><%= link_to "Contact", static_pages_contact_path %></li>
       </ul>
-      <ul class="navbar-right" id="navbar-right">
-        <li><%= form_tag("/products", method: "get") do %>
-          <%= label_tag(:q, "Search for:") %>
-          <%= text_field_tag(:q) %>
-          <%= submit_tag("Search") %>
+      <ul class="navbar-collapse collapse navbar-right" id="navbar-right">
+        <li><%= form_tag("/products", method: "get", class:"form-inline") do %>
+          <%= label_tag(:q, "Search for:", class: "sr-only") %>
+          <%= text_field_tag(:q, "", class: "form-control") %>
+          <%= submit_tag("Search", class: "btn btn-default") %>
+          <% end %>
+        </li>
+      </ul>
+      <ul class="nav pull-right" id="login">
+        <li>
+          <% if user_signed_in? %>
+            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+          <% else %>
+            <%= link_to('Login', new_user_session_path, class: "btn btn-primary") %>
           <% end %>
         </li>
       </ul>
     </nav>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <%= yield %>
     <footer class="site-footer">
       <p class="footer-text">

@@ -1,15 +1,17 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   padding-top: 40px;
   font-family: 'Lato', sans-serif;
   margin: 0 15px;
   text-align: center;
-}
-
-html, body {
-  height: 100%;
+  margin-bottom: 25px;
 }
 
 .page-wrap {
@@ -65,10 +67,6 @@ nav a {
 
 #q {
   color: black;
-}
-
-#navbar-right {
-  margin-right: 15px;
 }
 
 #navbar a:hover {
