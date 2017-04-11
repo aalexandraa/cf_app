@@ -53,6 +53,8 @@ end
 
 gem 'devise'
 
+gem 'cancancan', '~> 1.10'
+
 group :production do
   gem 'pg'
 end
