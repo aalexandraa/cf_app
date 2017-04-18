@@ -54,10 +54,6 @@ p {
 
 nav {
   background-color: black;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  text-align: left;
   z-index: 1;
 }
 
@@ -65,27 +61,18 @@ nav a {
   color: white;
 }
 
-.navbar-left {
-  margin-top: 4px;
-}
-
-#q {
-  color: black;
-}
-
 #navbar a:hover {
     color: #778899;
     text-decoration: none;
 }
 
-ul li {
-  display: inline-block;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  padding: 10px 10px 0 0;
+.navbar-brand {
   text-decoration: none;
+}
+
+ul li {
+  text-transform: uppercase;
   font-family: 'Hind', sans-serif;
-  color: white;
 }
 
 //contact-page

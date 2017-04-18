@@ -15,32 +15,55 @@
   </head>
 
   <body>
-    <nav id="navbar">
-      <ul class="navbar-collapse collapse navbar-left navbar-fixed-top">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Products", products_path %></li>
-        <li><%= link_to "About", static_pages_about_path %></li>
-        <li><%= link_to "Contact", static_pages_contact_path %></li>
-      </ul>
-      <ul class="navbar-collapse collapse navbar-right" id="navbar-right">
-        <li><%= form_tag("/products", method: "get", class:"form-inline") do %>
-          <%= label_tag(:q, "Search for:", class: "sr-only") %>
-          <%= text_field_tag(:q, "", class: "form-control", placeholder: "Search") %>
-          <%= submit_tag("Search", class: "btn btn-default") %>
-          <% end %>
-        </li>
-      </ul>
-      <ul class="nav pull-right" id="login">
-        <li>
-          <% if user_signed_in? %>
-            <span><%= link_to("Edit My Profile", edit_user_registration_path, class: "btn btn-primary") %></span>
-            <span><%= link_to("Logout", destroy_user_session_path, :method => :delete, class: "btn btn-danger") %></span>
-          <% else %>
-            <%= link_to("Login", new_user_session_path, class: "btn btn-primary") %>
-          <% end %>
-        </li>
-      </ul>
+    <nav class="navbar navbar-fixed-top" id="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">
+            <%= link_to "Bike Berlin", root_path %>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Products", products_path %></li>
+            <li><%= link_to "About", static_pages_about_path %></li>
+            <li><%= link_to "Contact", static_pages_contact_path %></li>
+          </ul>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <div class="form-group">
+            <%= form_tag("/products", method: "get", class:"form-inline") do %>
+            <%= label_tag(:q, "Search for:", class: "sr-only") %>
+            <%= text_field_tag(:q, "", class: "form-control", placeholder: "Search") %>
+            <%= submit_tag("Search", class: "btn btn-default") %>
+            <% end %>
+          </div>
+        </form>
+        </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li><%= link_to 'Edit My Profile', edit_user_registration_path %></li>
+              <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+              <li><%= link_to 'Login', new_user_session_path %></li>
+            <% end %>
+          </ul>
+
+        </div>
+      </div>
     </nav>
+
+
+
+
+
+
 
     <% if notice %>
       <p id="notice" class="alert alert-info"><%= notice %></p>
