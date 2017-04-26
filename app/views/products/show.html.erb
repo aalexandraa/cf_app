@@ -38,10 +38,45 @@
     </div>
   </div>
 
+<<<<<<< Updated upstream
   <% if signed_in? && current_user.admin? %>
   <div class="product-button col-md-12">
     <%= link_to 'Edit', edit_product_path(@product) %> |
     <%= link_to 'Back', products_path %>
   </div>
   <% end %>
+=======
+<div class="container-fluid">
+<div class="show_product">
+  <h2>
+    <%= @product.name %>
+  </h2>
+
+  <p>
+    <strong>
+      <%= image_tag(@product.image_url) %>
+    </strong>
+  </p>
+
+  <p>
+    <%= @product.price / 1 %>
+  </p>
+
+  <p>
+    <%= @product.description %>
+  </p>
+
+  <p>
+    <%= @product.highest_rating_comment %>
+  </p>
+
+  <p>
+    <%= @product.lowest_rating_comment %>
+  </p>
+</div>
+
+<div class="product-button">
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to 'Back', products_path %>
+>>>>>>> Stashed changes
 </div>
