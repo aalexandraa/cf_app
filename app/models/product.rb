@@ -1,7 +1,6 @@
 class Product < ApplicationRecord
   has_many :orders
   has_many :comments
-<<<<<<< Updated upstream
 
   validates :name, presence: true
   validates :price, numericality: true
@@ -19,8 +18,6 @@ class Product < ApplicationRecord
   def average_rating
     comments.average(:rating).to_f
   end
-=======
->>>>>>> Stashed changes
 
   def self.search(search_term)
     if Rails.env.development?
