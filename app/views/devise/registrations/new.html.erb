@@ -5,6 +5,16 @@
     <%= devise_error_messages! %>
 
     <div class="field">
+      <%= f.label :first_name, class: "sr-only" %><br />
+      <%= f.text_field :first_name, autofocus: true, class: "form-control", placeholder: "Enter First Name", required: "required" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :last_name, class: "sr-only" %><br />
+      <%= f.text_field :last_name, autofocus: true, class: "form-control", placeholder: "Enter Last Name", required: "required" %>
+    </div>
+
+    <div class="field">
       <%= f.label :email, class: "sr-only" %><br />
       <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Enter Email", required: "required" %>
     </div>
