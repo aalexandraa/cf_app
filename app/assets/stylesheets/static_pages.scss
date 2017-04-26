@@ -11,7 +11,7 @@ body {
   font-family: 'Lato', sans-serif;
   margin: 0 15px;
   text-align: center;
-  margin-bottom: 25px;
+  padding-bottom: 25px;
 }
 
 .page-wrap {
@@ -46,14 +46,14 @@ p {
   margin-right: auto;
 }
 
+.container-fluid {
+  text-align: center;
+}
+
 //nav-bar
 
 nav {
   background-color: black;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  text-align: left;
   z-index: 1;
 }
 
@@ -61,28 +61,25 @@ nav a {
   color: white;
 }
 
-.navbar-left {
-  margin-top: 4px;
-}
-
-#q {
-  color: black;
-}
-
 #navbar a:hover {
     color: #778899;
     text-decoration: none;
 }
 
-ul li {
-  display: inline-block;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  padding: 10px 10px 0 0;
+.navbar-brand {
   text-decoration: none;
-  font-family: 'Hind', sans-serif;
-  color: white;
 }
+
+ul li {
+  text-transform: uppercase;
+  font-family: 'Hind', sans-serif;
+}
+
+.nav > li {
+  z-index: 9999;
+}
+
+
 
 //contact-page
 
@@ -115,6 +112,10 @@ ul li {
 //footer
 
 .site-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   height: 25px;
   color: white;
   background: black;

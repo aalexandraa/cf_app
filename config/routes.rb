@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}, :controllers => {:registrations => "user_registration"}
   resources :users
 
-  resources :products
+  resources :products do
+    resources :comments
+  end
+
   get 'static_pages/index'
 
   get 'static_pages/about'

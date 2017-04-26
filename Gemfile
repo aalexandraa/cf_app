@@ -52,8 +52,14 @@ group :development do
 end
 
 gem 'devise'
-
 gem 'cancancan', '~> 1.10'
+gem 'will_paginate', '~> 3.1.0'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
+end
+
+gem 'rails-controller-testing'
 
 group :production do
   gem 'pg'

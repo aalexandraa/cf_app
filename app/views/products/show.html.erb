@@ -1,26 +1,47 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="show_product">
+    <div class="col-md-12">
+      <h2>
+        <%= @product.name %>
+      </h2>
+    </div>
+    <div class="col-md-12">
+      <p>
+        <strong>
+          <%= image_tag(@product.image_url) %>
+        </strong>
+      </p>
+    </div>
+    <div class="col-md-12">
+      <p>
+        <%= @product.price / 1 %>
+      </p>
+      <p>
+        <%= @product.description %>
+      </p>
+      <div class="rated" data-score="<%= @product.average_rating %>">
+      </div>
+    </div>
+  </div>
+  <div class="rate-product">
+    <div class="col-md-6 rate-product">
+      <h4>Customer reviews:</h4>
+      <p>
+        <%= render partial: "comments" %>
+        <%= will_paginate @comments %>
+      </p>
+    </div>
+    <div class="col-md-6 rate-product">
+      <p>
+        <%= render partial: "new_comment" %>
+      </p>
+    </div>
+  </div>
 
-<div class="show_product">
-  <h2>
-    <%= @product.name %>
-  </h2>
-
-  <p>
-    <strong>
-      <%= image_tag(@product.image_url) %>
-    </strong>
-  </p>
-
-  <p>
-    <%= @product.price / 1 %>
-  </p>
-
-  <p>
-    <%= @product.description %>
-  </p>
-</div>
-
-<div class="product-button">
-  <%= link_to 'Edit', edit_product_path(@product) %> |
-  <%= link_to 'Back', products_path %>
+  <% if signed_in? && current_user.admin? %>
+  <div class="product-button col-md-12">
+    <%= link_to 'Edit', edit_product_path(@product) %> |
+    <%= link_to 'Back', products_path %>
+  </div>
+  <% end %>
 </div>
