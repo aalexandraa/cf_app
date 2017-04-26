@@ -7,4 +7,7 @@ class UserRegistrationController < Devise::RegistrationsController
     end
   end
 
+  def edit
+  end
+
 end
