@@ -5,9 +5,9 @@ describe Product do
   before do
     #here you put your code to generate test content
 
-    @product = Product.create!(name: "race bike", description: "Super fast bike.", price: "299", image_url: "bestbike.jpg")
+    @product = FactoryGirl.create(:product)
 
-    @user = User.create!(email: "tardarsauce@grumpy.com", password: "GrumpyCat191")
+    @user = FactoryGirl.create(:user)
 
     @product.comments.create!(rating: 1, user: @user, body: "Meow!")
     @product.comments.create!(rating: 3, user: @user, body: "Meow Meow Meow!")
