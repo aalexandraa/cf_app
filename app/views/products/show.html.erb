@@ -16,6 +16,11 @@
       <p>
         <%= @product.price / 1 %>
       </p>
+      <div class="payment">
+        <%= form_tag "/payments/create" do %>
+        <%= render partial: "shared/stripe_checkout_button" %>
+        <% end %>
+      </div>
       <p>
         <%= @product.description %>
       </p>
