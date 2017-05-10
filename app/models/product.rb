@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   validates :name, presence: true
   validates :price, numericality: true
   validates :description, presence: true
-  validates :image_url, format: { with: %r{.(jpg|png)\Z}i, message: 'must be a URL for JPG or PNG image.' }
+  validates :image_url, format: { with: /\A[jpg|png]+\z/, message: 'must be a URL for JPG or PNG image.' }
 
   def highest_rating_comment
     comments.rating_desc.first
