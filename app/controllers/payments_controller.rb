@@ -6,7 +6,7 @@ class PaymentsController < ApplicationController
     # Create the charge on Stripe's servers - this will charge the user's card
     begin
       charge = Stripe::Charge.create(
-        :amount => @product.price * 100,
+        :amount => (@product.price * 100).to_i,
         :currency => "eur",
         :source => token,
         :description => params[:stripeEmail]
@@ -16,7 +16,7 @@ class PaymentsController < ApplicationController
         Order.create(
         product_id: @product.id,
         user_id: @user.id,
-        total: @product.price * 100
+        total: (@product.price * 100).to_i
         )
       end
 
