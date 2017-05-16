@@ -18,8 +18,7 @@ class PaymentsController < ApplicationController
         user_id: @user.id,
         total: (@product.price * 100).to_i
         )
-        UserMailer.paid_success(@user, @product).deliver.now
-        flash[:success] = "Payment processed successfully"
+        UserMailer.paid_success(@user, @product).deliver_now
       end
 
     rescue Stripe::CardError => e
@@ -28,6 +27,6 @@ class PaymentsController < ApplicationController
       err = body[:error]
       flash[:error] = "Unfortunatly, there was an error procession your payment: #{err[:message]}"
     end
-    redirect_to product_path(@product)
+  redirect_to product_path(@product), notice: "Payment processed successfully!"
   end
 end
