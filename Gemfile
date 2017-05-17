@@ -57,6 +57,8 @@ gem 'will_paginate', '~> 3.1.0'
 
 gem 'stripe'
 
+gem 'dalli'
+
 gem 'brakeman', '~> 3.6.1'
 
 group :development, :test do
