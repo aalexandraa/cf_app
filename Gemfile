@@ -61,6 +61,8 @@ gem 'dalli'
 
 gem 'brakeman', '~> 3.6.1'
 
+gem 'redis-rails'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails', '~>4.0'

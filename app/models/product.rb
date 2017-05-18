@@ -7,6 +7,14 @@ class Product < ApplicationRecord
   validates :description, presence: true
   validates :image_url, format: { with: /\A[jpg|png]+\z/, message: 'must be a URL for JPG or PNG image.' }
 
+  def views
+    $redis.get("product:#{id}")
+  end
+
+  def viewed!
+    $redis.incr("product:#{id}")
+  end
+
   def highest_rating_comment
     comments.rating_desc.first
   end
