@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="show_product">
+  <div class="show_product" data-product-id="<%= @product.id %>">
     <% cache @product do %>
     <div class="col-md-12">
       <h2>
@@ -28,16 +28,15 @@
       </p>
       <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>">
       </div>
+      <h6>
+        Views:
+        <span class="badge">
+          <%= @product.views %>
+        </span>
+      </h6>
     </div>
     <% end %>
   </div>
-
-  <h6>
-    Views:
-    <span class="badge">
-      <%= @product.views %>
-    </span>
-  </h6>
 
   <div class="rate-product">
     <div class="col-md-6 rate-product">
@@ -53,6 +52,7 @@
         <%= render partial: "new_comment" %>
       </p>
     </div>
+
   </div>
 
   <% if signed_in? && current_user.admin? %>
