@@ -1,5 +1,6 @@
 <div class="container">
-  <div class="show_product">
+  <div class="show_product" data-product-id="<%= @product.id %>">
+    <% cache @product do %>
     <div class="col-md-12">
       <h2>
         <%= @product.name %>
@@ -8,7 +9,7 @@
     <div class="col-md-12">
       <p>
         <strong>
-          <%= image_tag(@product.image_url) %>
+          <%= image_tag(@product.image_url, class: "img-zoom", data_zoom_image: "@product.image_url") %>
         </strong>
       </p>
     </div>
@@ -16,16 +17,31 @@
       <p>
         <%= @product.price / 1 %>
       </p>
+      <div class="payment">
+        <%= form_tag "/payments/create" do %>
+        <%= hidden_field_tag(:product_id, @product.id) %>
+        <%= render partial: "shared/stripe_checkout_button" %>
+        <% end %>
+      </div>
       <p>
         <%= @product.description %>
       </p>
-      <div class="rated" data-score="<%= @product.average_rating %>">
+      <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>">
       </div>
+      <h6>
+        Views:
+        <span class="badge">
+          <%= @product.views %>
+        </span>
+      </h6>
     </div>
+    <% end %>
   </div>
+
   <div class="rate-product">
     <div class="col-md-6 rate-product">
       <h4>Customer reviews:</h4>
+      <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
       <p>
         <%= render partial: "comments" %>
         <%= will_paginate @comments %>
@@ -36,6 +52,7 @@
         <%= render partial: "new_comment" %>
       </p>
     </div>
+
   </div>
 
   <% if signed_in? && current_user.admin? %>

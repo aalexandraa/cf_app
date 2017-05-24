@@ -55,8 +55,17 @@ gem 'devise'
 gem 'cancancan', '~> 1.10'
 gem 'will_paginate', '~> 3.1.0'
 
+gem 'stripe'
+
+gem 'dalli'
+
+gem 'brakeman', '~> 3.6.1'
+
+gem 'redis-rails'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails', '~>4.0'
 end
 
 gem 'rails-controller-testing'

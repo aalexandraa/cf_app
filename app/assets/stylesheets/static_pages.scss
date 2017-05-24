@@ -11,7 +11,7 @@ body {
   font-family: 'Lato', sans-serif;
   margin: 0 15px;
   text-align: center;
-  padding-bottom: 25px;
+  padding-bottom: 80px;
 }
 
 .page-wrap {
@@ -79,7 +79,10 @@ ul li {
   z-index: 9999;
 }
 
-
+nav img {
+  height: 50px;
+  margin-top: -14px;
+}
 
 //contact-page
 
@@ -116,11 +119,12 @@ ul li {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 25px;
+  height: 65px;
   color: white;
   background: black;
   text-align: center;
   margin-top: 15px;
+  padding: 20px 0;
 }
 
 .footer-text {

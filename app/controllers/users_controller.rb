@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_filter :authentiate_user!
+  before_filter :authenticate_user!
   load_and_authorize_resource
 
 
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     if current_user != @user
-      redirect_to roor_url, alert: "Sorry, this isn't your profile."
+      redirect_to root_url, alert: "Sorry, this isn't your profile."
     end
   end
 
