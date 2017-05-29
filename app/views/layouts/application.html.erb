@@ -37,15 +37,14 @@
             <li><%= link_to "Contact", static_pages_contact_path %></li>
           </ul>
         </ul>
-        <form class="navbar-form navbar-right">
-          <div class="form-group">
-            <%= form_tag("/products", method: "get", class:"form-inline") do %>
+        <div class="form-group navbar-form navbar-right">
+          <%= form_tag("/products", method: "get", class:"form-inline") do %>
             <%= label_tag(:q, "Search for:", class: "sr-only") %>
-            <%= text_field_tag(:q, "", class: "form-control", placeholder: "Search") %>
+            <%= text_field_tag(:q, nil, class: "form-control", placeholder: "Search") %>
             <%= submit_tag("Search", class: "btn btn-default") %>
-            <% end %>
-          </div>
-        </form>
+          <% end %>
+        </div>
+
         </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
