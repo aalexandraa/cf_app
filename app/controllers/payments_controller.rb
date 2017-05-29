@@ -13,7 +13,7 @@ class PaymentsController < ApplicationController
       )
 
       if charge.paid
-        Order.create(
+        Order.create!(
         product_id: @product.id,
         user_id: @user.id,
         total: (@product.price * 100).to_i
