@@ -17,12 +17,16 @@
       <p>
         <%= @product.price / 1 %>
       </p>
+
       <div class="payment">
+        <% if signed_in? && current_user.admin? %>
         <%= form_tag "/payments/create" do %>
         <%= hidden_field_tag(:product_id, @product.id) %>
         <%= render partial: "shared/stripe_checkout_button" %>
         <% end %>
+        <% end %>
       </div>
+
       <p>
         <%= @product.description %>
       </p>
